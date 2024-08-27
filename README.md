@@ -1,3 +1,42 @@
+# docker-images_stm32mp1_cortex-a7_development-environment
+
+- [STM32MP157D-DK1](https://www.st.com/en/evaluation-tools/stm32mp157d-dk1.html) の開発を行う Ubuntu環境
+    - STM32MP157D-DK1 の cortex-a7 で動作させる C, C++ のSDK, コンパイルツール が導入される
+    - STM32MP157D-DK1 のcortex-a7 は OS (OpenSTLinux) をカスタマイズ ができる環境
+
+## Ubuntu環境 の構築について
+- 公式のドキュメントを参考に構築
+    - [st.com - wiki - STM32MP157x-DK2](https://wiki.st.com/stm32mpu/wiki/Getting_started/STM32MP1_boards/STM32MP157x-DK2)
+        - [st.com - wiki - PC prerequisites](https://wiki.st.com/stm32mpu/wiki/PC_prerequisites) 開発を行うホストPC の要件、ソフトウェアについて
+        - [st.com - wiki - STM32MP157x-DK2 - Install the SDK](https://wiki.st.com/stm32mpu/wiki/Getting_started/STM32MP1_boards/STM32MP157x-DK2/Develop_on_Arm%C2%AE_Cortex%C2%AE-A7/Install_the_SDK) に記載のある環境を構築している
+
+
+## ビルド
+
+```
+.
+|-- dockerfile
+|   `-- stm32mp1_cortex-a7_development-environment
+|       |-- Dockerfile
+|       `-- en.SDK-x86_64-stm32mp1-openstlinux-6.1-yocto-mickledore-mpu-v24.06.26.tar.gz
+|-- scripts
+|   `-- dockerfile
+|       |-- stm32mp1_cortex-a7_development-environment
+|       |   |-- build.ps1
+|       |   |-- push.ps1
+|       |   `-- __config.ps1
+|       `-- __config.ps1
+```
+
+1. dockerfile/stm32mp1_cortex-a7_development-environment 以下に tar.gz を追加
+    - en.SDK-x86_64-stm32mp1-openstlinux-6.1-yocto-mickledore-mpu-v24.06.26.tar.gz をダウンロードして設置する
+        - [STM32MP1 OpenSTLinux Developer Package](https://www.st.com/en/embedded-software/stm32mp1dev.html)
+            - `MP1-DEV-x86` をダウンロード
+            - en.sdk-x86_64-stm32mp1-openstlinux-6.1-yocto-mickledore-mpu-v24.06.26.tar.gz
+            - SDK や ツールのソースなど
+
+1. scripts/dockerfile/stm32mp1_cortex-a7_development-environment/build.ps1 を実行
+
 # docker-images_template
 
 - Docker イメージ を作成するときのテンプレート

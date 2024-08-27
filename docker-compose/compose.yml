@@ -1,3 +1,3 @@
 services:
-  container-name_software-version:
-    image: repository:software-version
+  stm32mp1_cortex-a7_development-environment:
+    image: takeshitawork/stm32mp1_cortex-a7_development-environment:latest

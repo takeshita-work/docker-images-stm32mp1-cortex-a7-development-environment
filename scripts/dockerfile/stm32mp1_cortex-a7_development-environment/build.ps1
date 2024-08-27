@@ -1,11 +1,11 @@
 try {
     # 設定ファイルの読み込み
     . $PSScriptRoot/../__config.ps1  # repository setting
-    . $PSScriptRoot/__config.ps1        # distribution setting
+    . $PSScriptRoot/__config.ps1     # version setting
 
     # タグ の生成
-    $imageTagLatest = "${global:repositoryName}:${global:softwareName}"
-    $imageTagDate   = "${global:repositoryName}:${global:softwareName}_${global:date}"
+    $imageTagLatest = "${global:repositoryName}:${global:version}"
+    $imageTagDate   = "${global:repositoryName}:${global:version}_${global:date}"
 
     # Dockerfile のパスの生成
     $dockerfilePath = "./dockerfile/${global:softwareName}/Dockerfile"
